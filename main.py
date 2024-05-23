@@ -47,7 +47,7 @@ def save_download_history(video_url, format_type):
 
 def get_download_history():
     history = key_value_storage("retrieve", "youtube_downloader", "history").get("kv_pairs", [])
-    return history
+    return [item['value'] for item in history]
 
 def is_valid_url(url):
     pattern = re.compile(
