@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+    background-color: #f7fafc;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bg-gradient-to-r {
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-blue {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: #2563eb;
+}
+
+.btn-green {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: #059669;
+}
+
+.text-gray-700 {
+    color: #4a5568;
+}
