@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         historyItem.textContent = videoUrlInput.value + ' - ' + format;
         downloadHistory.appendChild(historyItem);
         saveDownloadHistory(videoUrlInput.value, format);
+        downloadFile(videoUrlInput.value, format);
     }
 
     function saveDownloadHistory(videoUrl, format) {
@@ -66,4 +67,12 @@ function isValidUrl(url) {
         '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
         '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
     return !!pattern.test(url);
+function downloadFile(videoUrl, format) {
+    const link = document.createElement('a');
+    link.href = videoUrl; // This should be the URL of the converted file
+    link.download = `download.${format}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 }
